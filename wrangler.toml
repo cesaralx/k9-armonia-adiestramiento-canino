@@ -7,6 +7,8 @@ compatibility_flags = ["nodejs_compat"]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
+[previews]
+
 # Bindings opcionales para Cloudflare D1 / KV
 # [[d1_databases]]
 # binding = "DB"
