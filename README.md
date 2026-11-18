@@ -11,7 +11,7 @@ Landing page de alto rendimiento y optimizada para conversión para **K9 Armoní
   3. **Metodología y Beneficios:** Enfoque en refuerzo positivo, planes personalizados y coaching familiar.
   4. **Testimonios y Casos de Éxito:** Reseñas reales con raza, edad y resumen del resultado logrado.
   5. **Formulario de Registro y Diagnóstico:** Validación cliente y servidor con **Zod** y **React Hook Form**.
-  6. **API Route en Edge Runtime (`app/api/leads/route.ts`):** Configurada con `export const runtime = 'edge'` y hooks listos para Resend, Cloudflare D1, Supabase o Webhooks.
+  6. **API Route (`app/api/leads/route.ts`):** Compatible con Cloudflare Workers vía `@opennextjs/cloudflare` (`nodejs_compat`) y hooks listos para Resend, Cloudflare D1, Supabase o Webhooks.
 
 ## Scripts disponibles
 
@@ -22,9 +22,9 @@ npm run dev
 # Compilación estándar de Next.js
 npm run build
 
-# Compilación para Cloudflare Pages (@cloudflare/next-on-pages)
+# Compilación para Cloudflare Workers (@opennextjs/cloudflare)
 npm run build:cloudflare
 
-# Previsualización local con Wrangler Pages
+# Previsualización local con OpenNext + Wrangler
 npm run preview
 ```

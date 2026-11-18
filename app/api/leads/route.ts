@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { leadSchema, type LeadFormData } from "@/lib/schemas/lead";
 
-export const runtime = "edge";
-
 interface LeadRecord extends LeadFormData {
   id: string;
   submittedAt: string;
@@ -72,7 +70,7 @@ export async function POST(request: NextRequest) {
     });
 
     // ============================================================================
-    // 1. HOOK DE INTEGRACIÓN: Envío de Correo Transaccional (Resend API - Edge)
+    // 1. HOOK DE INTEGRACIÓN: Envío de Correo Transaccional (Resend API)
     // ============================================================================
     // if (process.env.RESEND_API_KEY) {
     //   await fetch("https://api.resend.com/emails", {
@@ -100,9 +98,10 @@ export async function POST(request: NextRequest) {
     // ============================================================================
     // 2. HOOK DE INTEGRACIÓN: Persistencia en Base de Datos (Cloudflare D1 / Supabase)
     // ============================================================================
-    // Opción A: Cloudflare D1 (usando getRequestContext de @cloudflare/next-on-pages)
-    // import { getRequestContext } from "@cloudflare/next-on-pages";
-    // const db = getRequestContext().env.DB;
+    // Opción A: Cloudflare D1 (usando getCloudflareContext de @opennextjs/cloudflare)
+    // import { getCloudflareContext } from "@opennextjs/cloudflare";
+    // const { env } = await getCloudflareContext({ async: true });
+    // const db = env.DB;
     // await db
     //   .prepare(
     //     `INSERT INTO leads (
