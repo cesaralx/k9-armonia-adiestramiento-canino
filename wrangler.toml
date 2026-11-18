@@ -1,11 +1,13 @@
 name = "k9-armonia-adiestramiento-canino"
 main = ".open-next/worker.js"
-compatibility_date = "2025-03-25"
+compatibility_date = "2026-10-01"
 compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+[previews]
 
 # Bindings opcionales para Cloudflare D1 / KV
 # [[d1_databases]]
